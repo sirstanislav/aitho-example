@@ -1,2 +1,36 @@
 @use "../custom" as *;
-@use '../components/mixins' as *;
+@use "../components/mixins" as *;
+
+.navbar__logo {
+  max-height: calc(60px - (0.25rem * 2));
+}
+
+.nav-link {
+  height: 100%;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  padding: 1rem 0.5rem;
+  border-bottom: 3px solid transparent;
+  border-top: 3px solid transparent;
+
+  &:focus {
+    border-bottom: 3px solid #0f6cbf;
+  }
+}
+
+.menu {
+  height: 59px;
+  border-bottom: 1px solid #dee2e6;
+
+  li {
+    padding: 0 0.7em;
+  }
+
+  a {
+    color: $black;
+    text-transform: capitalize;
+    font-weight: 200;
+    font-size: 15px;
+  }
+}

@@ -4,9 +4,11 @@
 
 @use "components/animations";
 @use "components/buttons";
+@use "components/dropdown";
 @use "components/mixins";
+@use "components/offcanvas";
 @use "components/typography";
 
 // IMPORT THE SECTIONS
 
-@use 'sections/navbar';
+@use "sections/navbar";

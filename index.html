@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Bootstrap Aitho Demo</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome.css" />
     <link
@@ -13,126 +13,281 @@
   </head>
   <body>
     <!--HEADER-->
-    <header>
-      <nav class="navbar bg-body-emphasis fixed-top menu p-0 m-0">
+    <header class="header">
+      <nav class="navbar bg-white fixed-top menu p-0 m-0">
         <div class="container-fluid flex-row flex-nowrap">
-          <div class="container-fluid d-flex align-items-center">
-            <a href="#" class="navbar-brand d-none d-md-block">
-              <img
-                class="navbar__logo"
-                src="./assets/images/logo.png"
-                alt="Logo"
-              />
-            </a>
-            <!--nav panel on the large screen-->
-            <div class="navbar-nav flex-row d-none d-md-flex">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-              <a class="nav-link active" href="#">Dashboard</a>
-              <a class="nav-link" href="#">My courses</a>
-            </div>
-
-            <!--Menu button on the small screen-->
-            <button
-              class="navbar-toggler d-md-none"
-              type="button"
-              data-bs-toggle="offcanvas"
-              data-bs-target="#offcanvasNavbar"
-              aria-controls="offcanvasNavbar"
-            >
-              <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!--Offcanvas on the small screen-->
-            <div
-              class="offcanvas offcanvas-start"
-              tabindex="-1"
-              id="offcanvasNavbar"
-            >
-              <div class="offcanvas-header">
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="offcanvas"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <!--Menu panel on the small screen-->
-              <div class="offcanvas-body">
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"
-                      >Home</a
-                    >
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">Dashboard</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="#">My Courses</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
+          <a href="#" class="navbar-brand d-none d-md-block p-0">
+            <img
+              class="navbar__logo"
+              src="./assets/images/logo.png"
+              alt="Logo"
+            />
+          </a>
+          <!--nav panel on the large screen-->
+          <div class="navbar-nav flex-row d-none d-md-flex">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" href="#">Dashboard</a>
+            <a class="nav-link" href="#">My courses</a>
           </div>
 
-          <div
-            class="container-fluid d-flex align-items-center justify-content-end"
+          <!--Menu button on the small screen-->
+          <button
+            class="navbar-toggler d-md-none"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
           >
-            <!--Notification button-->
-            <a
-              class="btn border-0 fas fa-light fa-bell"
-              data-bs-toggle="popover"
-              role="button"
-              data-bs-title="Notifications"
-              data-bs-content="And here's some amazing content. It's very engaging. Right?"
-            >
-            </a>
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-            <!--Profile button-->
-            <div class="dropdown">
-              <a
-                class="btn dropdown-toggle border-0"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                data-bs-auto-close="outside"
-                aria-expanded="false"
-                >SS
-              </a>
-              <!--Profile body menu-->
-              <ul class="dropdown-menu dropdown-menu-end mt-3" style="">
-                <li><a class="dropdown-item" href="#">Profile</a></li>
-                <li><a class="dropdown-item" href="#">Grades</a></li>
-                <li><a class="dropdown-item" href="#">Calendar</a></li>
-                <li><a class="dropdown-item" href="#">Private files</a></li>
-                <li><a class="dropdown-item" href="#">Reports</a></li>
-                <li>
-                  <hr class="dropdown-divider" />
-                </li>
-                <li><a class="dropdown-item" href="#">Preferences</a></li>
-                <li class="dropstart">
-                  <a
-                    class="dropdown-item dropdown-toggle"
-                    data-bs-toggle="dropdown"
-                    href="#"
-                    >Language</a
+          <!--Offcanvas on the small screen-->
+          <div
+            class="offcanvas offcanvas-start"
+            tabindex="-1"
+            id="offcanvasNavbar"
+          >
+            <div class="offcanvas-header">
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!--Menu panel on the small screen-->
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#"
+                    >Home</a
                   >
-                  <ul class="dropdown-menu">
-                    <li><a href="#" class="dropdown-item">Italian</a></li>
-                    <li><a href="#" class="dropdown-item">English</a></li>
-                  </ul>
                 </li>
-                <li>
-                  <hr class="dropdown-divider" />
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Dashboard</a>
                 </li>
-                <li><a class="dropdown-item" href="#">Log out</a></li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">My Courses</a>
+                </li>
               </ul>
             </div>
+          </div>
+          <!--Notification button-->
+          <a
+            class="btn border-0 fas fa-light fa-bell ms-auto"
+            data-bs-toggle="popover"
+            role="button"
+            data-bs-title="Notifications"
+            data-bs-content="And here's some amazing content. It's very engaging. Right?"
+          >
+          </a>
+
+          <!--Profile button-->
+          <div class="dropdown">
+            <a
+              class="btn dropdown-toggle border-0"
+              href="#"
+              role="button"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              aria-expanded="false"
+              >SS
+            </a>
+            <!--Profile body menu-->
+            <ul class="dropdown-menu dropdown-menu-end mt-3" style="">
+              <li><a class="dropdown-item" href="#">Profile</a></li>
+              <li><a class="dropdown-item" href="#">Grades</a></li>
+              <li><a class="dropdown-item" href="#">Calendar</a></li>
+              <li><a class="dropdown-item" href="#">Private files</a></li>
+              <li><a class="dropdown-item" href="#">Reports</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Preferences</a></li>
+              <li class="dropstart">
+                <a
+                  class="dropdown-item dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  href="#"
+                  >Language</a
+                >
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">Italian</a></li>
+                  <li><a href="#" class="dropdown-item">English</a></li>
+                </ul>
+              </li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Log out</a></li>
+            </ul>
           </div>
         </div>
       </nav>
     </header>
     <!--HEADER-->
+
+    <!--Main-->
+    <main class="container m-auto main">
+      <h1 class="text-center">Aitho Learn</h1>
+      <div class="container">
+        <h2>Available courses:</h2>
+      </div>
+
+      <div class="container mb-3 p-3 border border-1 rounded-3">
+        <div class="row">
+          <div class="col mb-3">
+            <a class="text-decoration-none" href="#">Backender 101</a>
+          </div>
+        </div>
+
+        <div
+          class="row flex-column flex-md-row align-content-center align-content-md-start"
+        >
+          <div
+            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+          >
+            <img
+              class="img-fluid mb-3 mb-md-0"
+              src="/assets/images/101.png"
+              alt="backend 101"
+            />
+          </div>
+          <div class="col-12 col-md-10">
+            <div class="row">
+              <div class="col mb-3">
+                Argomenti trattati: IDE IntelliJ, Java & Spring Boot, REST Api,
+                POSTMAN, MySQL & CRUD, Exception base, logica services,
+                interfacce, polimorfismo, ereditarietà, AFU, ATE, E-R Diagram,
+                stime, JUnit Test, frontend base con Angular (integrazione
+                BE/FE).
+              </div>
+            </div>
+            <div class="row">
+              <ul class="list-unstyled">
+                <li>
+                  <span>Teacher:</span>
+                  <a class="text-decoration-none text-info-emphasis" href="#"
+                    >Alessandro Le Mura</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-3 p-3 border border-1 rounded-3">
+        <div class="row">
+          <div class="col mb-3">
+            <a class="text-decoration-none" href="#">Git 101</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+          >
+            <img
+              class="img-fluid mb-3 mb-md-0"
+              src="/assets/images/git.png"
+              alt="backend 101"
+            />
+          </div>
+          <div class="col-10">
+            <div class="row">
+              <div class="col mb-3">
+                Questo corso si occupa di spiegare i concetti base di Git e
+                della condivisione di un progetto software in un team.
+              </div>
+            </div>
+            <div class="row">
+              <ul class="list-unstyled">
+                <li>
+                  <span>Teacher:</span>
+                  <a class="text-decoration-none text-info-emphasis" href="#"
+                    >Gabriele Grillo</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-3 p-3 border border-1 rounded-3">
+        <div class="row">
+          <div class="col mb-3">
+            <a class="text-decoration-none" href="#">Onboarding di base</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+          >
+            <img
+              class="img-fluid mb-3 mb-md-0"
+              src="/assets/images/onboardin.png"
+              alt="backend 101"
+            />
+          </div>
+          <div class="col-10">
+            <div class="row">
+              <div class="col mb-3"></div>
+            </div>
+            <div class="row">
+              <ul class="list-unstyled">
+                <li>
+                  <span>Teacher:</span>
+                  <a class="text-decoration-none text-info-emphasis" href="#"
+                    >Carla Naselli</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container mb-3 p-3 border border-1 rounded-3">
+        <div class="row">
+          <div class="col mb-3">
+            <a class="text-decoration-none" href="#">ReactJS 101</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div
+            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+          >
+            <img
+              class="img-fluid mb-3 mb-md-0"
+              src="/assets/images/react.png"
+              alt="backend 101"
+            />
+          </div>
+          <div class="col-10">
+            <div class="row">
+              <div class="col mb-3">
+                In questo corso imparerai le basi per poter usare React JS con
+                TypeScript ed Hooks
+              </div>
+            </div>
+            <div class="row">
+              <ul class="list-unstyled">
+                <li>
+                  <span>Teacher:</span>
+                  <a class="text-decoration-none text-info-emphasis" href="#"
+                    >Orazio Contarino</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

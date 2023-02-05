@@ -6,12 +6,134 @@
     <title>Bootstrap demo</title>
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome.css" />
-    <link rel="stylesheet" href="assets/vendors/css/glightbox.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
   </head>
-  <body></body>
-  <!-- <script src="assets/js/bootstrap.js"></script> -->
+  <body>
+    <header>
+      <nav class="navbar bg-body-emphasis fixed-top menu p-0 m-0">
+        <div class="container-fluid flex-row flex-nowrap">
+          <div class="container-fluid d-flex align-items-center">
+            <a href="#" class="navbar-brand d-none d-md-block">
+              <img
+                class="navbar__logo"
+                src="./assets/images/logo.png"
+                alt="Logo"
+              />
+            </a>
+            <!--nav panel on the large screen-->
+            <div class="navbar-nav flex-row d-none d-md-flex">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" href="#">Dashboard</a>
+              <a class="nav-link" href="#">My courses</a>
+            </div>
+
+            <button
+              class="navbar-toggler d-md-none"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasNavbar"
+              aria-controls="offcanvasNavbar"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              class="offcanvas offcanvas-start"
+              tabindex="-1"
+              id="offcanvasNavbar"
+            >
+              <div class="offcanvas-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="offcanvas"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <!--nav panel on the small screen-->
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Dashboard</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">My Courses</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="container-fluid d-flex align-items-center justify-content-end"
+          >
+            <a
+              class="btn border-0 fas fa-light fa-bell"
+              data-bs-toggle="popover"
+              role="button"
+              data-bs-title="Notifications"
+              data-bs-content="And here's some amazing content. It's very engaging. Right?"
+            >
+            </a>
+
+            <div class="dropdown">
+              <a
+                class="btn dropdown-toggle border-0"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-auto-close="outside"
+                aria-expanded="false"
+                >SS
+              </a>
+
+              <ul class="dropdown-menu dropdown-menu-end mt-3" style="">
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#">Grades</a></li>
+                <li><a class="dropdown-item" href="#">Calendar</a></li>
+                <li><a class="dropdown-item" href="#">Private files</a></li>
+                <li><a class="dropdown-item" href="#">Reports</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Preferences</a></li>
+                <li class="dropstart">
+                  <a
+                    class="dropdown-item dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    >Language</a
+                  >
+                  <ul class="dropdown-menu">
+                    <li><a href="#" class="dropdown-item">Italian</a></li>
+                    <li><a href="#" class="dropdown-item">English</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Log out</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const popoverTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="popover"]'
+      );
+      const popoverList = [...popoverTriggerList].map(
+        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
+      );
+    </script>
+  </body>
 </html>

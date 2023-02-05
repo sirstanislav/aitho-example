@@ -1,7 +1,4 @@
-// My theme colors
-$purple-dark:  #9926f0;
-$purple-light:  #BB6EF5;
-$pink:    #D122E3;
+$primary:       #c29938;
 
 // White and gray colors
 $white:    #fff;
@@ -16,5 +13,5 @@ $gray-800: #343a40;
 $gray-900: #212529;
 $black:    #000;
 
-$primary:       $purple-dark;
-$secondary:     $pink;
+// IMPORT BOOTSTRAP 5
+@import "../node_modules/bootstrap/scss/bootstrap.scss";

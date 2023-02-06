@@ -72,15 +72,36 @@
               </ul>
             </div>
           </div>
-          <!--Notification button-->
+
           <a
-            class="btn border-0 fas fa-light fa-bell ms-auto"
-            data-bs-toggle="popover"
-            role="button"
-            data-bs-title="Notifications"
-            data-bs-content="And here's some amazing content. It's very engaging. Right?"
-          >
-          </a>
+            tabindex="0"
+            id="popoverNotification"
+            class="btn border-0 fa fa-regular fa-bell ms-auto"
+            aria-describedby="tooltip"
+          ></a>
+          <div class="container w-50 min-vw-25" id="tooltip" role="tooltip">
+            <div class="container d-flex flex-row m-0 p-0">
+              <p class="m-0 p-0 fs-6">Notifications</p>
+              <a
+                href="#"
+                class="ms-auto me-2 text-decoration-none text-primary fa-solid fa-check"
+              ></a
+              ><a href="#" class="text-decoration-none text-primary fa-solid fa-gear"></a>
+            </div>
+            <div class="container text-center">
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+              <p>You have no notifications</p>
+            </div>
+            <div class="container text-center">
+              <a class="text-decoration-none text-primary" href="#">See all</a>
+            </div>
+            <div id="arrow" data-popper-arrow></div>
+          </div>
 
           <!--Profile button-->
           <div class="dropdown">
@@ -94,7 +115,7 @@
               >SS
             </a>
             <!--Profile body menu-->
-            <ul class="dropdown-menu dropdown-menu-end mt-3" style="">
+            <ul class="dropdown-menu dropdown-menu-end mt-3">
               <li><a class="dropdown-item" href="#">Profile</a></li>
               <li><a class="dropdown-item" href="#">Grades</a></li>
               <li><a class="dropdown-item" href="#">Calendar</a></li>
@@ -291,13 +312,30 @@
 
     <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script>
-      const popoverTriggerList = document.querySelectorAll(
-        '[data-bs-toggle="popover"]'
-      );
-      const popoverList = [...popoverTriggerList].map(
-        (popoverTriggerEl) => new bootstrap.Popover(popoverTriggerEl)
-      );
+      const button = document.querySelector("#popoverNotification");
+      const tooltip = document.querySelector("#tooltip");
+
+      const popperInstance = Popper.createPopper(button, tooltip, {
+        modifiers: [
+          {
+            name: "offset",
+            options: {
+              offset: [0, 8],
+            },
+          },
+        ],
+      });
+
+      function show() {
+        tooltip.toggleAttribute("data-show");
+
+        // Update its position
+        popperInstance.update();
+      }
+
+      button.addEventListener("click", show);
     </script>
   </body>
 </html>

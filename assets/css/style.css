@@ -11616,6 +11616,59 @@ textarea.form-control-lg {
   width: 285px;
 }
 
+#tooltip {
+  min-width: 250px;
+  max-width: 300px;
+  background: white;
+  color: black;
+  font-weight: 400;
+  padding: 4px 8px;
+  font-size: 10px;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  display: none;
+}
+
+#tooltip[data-show] {
+  display: block;
+}
+
+#arrow,
+#arrow::before {
+  border-top: 1px solid #dee2e6;
+  border-left: 1px solid #dee2e6;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: inherit;
+}
+
+#arrow {
+  visibility: hidden;
+}
+
+#arrow::before {
+  visibility: visible;
+  content: "";
+  transform: rotate(45deg);
+}
+
+#tooltip[data-popper-placement^=top] > #arrow {
+  bottom: -4px;
+}
+
+#tooltip[data-popper-placement^=bottom] > #arrow {
+  top: -5px;
+}
+
+#tooltip[data-popper-placement^=left] > #arrow {
+  right: -4px;
+}
+
+#tooltip[data-popper-placement^=right] > #arrow {
+  left: -4px;
+}
+
 body {
   min-width: 320px;
 }
@@ -11651,7 +11704,6 @@ body {
 .menu a {
   color: #000;
   text-transform: capitalize;
-  font-weight: 200;
   font-size: 15px;
 }
 

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/fontawesome.css" />
     <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
@@ -86,7 +90,10 @@
                 href="#"
                 class="ms-auto me-2 text-decoration-none text-primary fa-solid fa-check"
               ></a
-              ><a href="#" class="text-decoration-none text-primary fa-solid fa-gear"></a>
+              ><a
+                href="#"
+                class="text-decoration-none text-primary fa-solid fa-gear"
+              ></a>
             </div>
             <div class="container text-center">
               <p>You have no notifications</p>
@@ -150,192 +157,257 @@
 
     <!--Main-->
     <main class="container m-auto main">
-      <h1 class="text-center">Aitho Learn</h1>
-      <div class="container">
+      <div class="container p-0 d-flex align-items-center">
+        <h1 class="text-start">Aitho Learn</h1>
+        <button
+          type="button"
+          class="btn btn-primary ms-auto button__add"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+        >
+          Add
+        </button>
+
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  New message
+                </h1>
+                <button
+                  type="button"
+                  class="btn-close close_modal"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="header-name" class="col-form-label"
+                      >Header:</label
+                    >
+                    <input type="text" class="form-control" id="header-name" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="image" class="col-form-label">Image:</label>
+                    <input type="text" class="form-control" id="image" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="message-text" class="col-form-label"
+                      >Message:</label
+                    >
+                    <textarea class="form-control" id="message-text"></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="teacher" class="col-form-label">Teacher:</label>
+                    <input type="text" class="form-control" id="teacher" />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary close_modal"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="submit" class="btn btn-primary send_modal">
+                  Send message
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container p-0">
         <h2>Available courses:</h2>
       </div>
 
-      <div class="container mb-3 p-3 border border-1 rounded-3">
-        <div class="row">
-          <div class="col mb-3">
-            <a class="text-decoration-none" href="#">Backender 101</a>
+      <div class="container articles mx-auto p-0">
+        <div class="container mb-3 p-3 border border-1 rounded-3 card">
+          <div class="row">
+            <div class="col mb-3">
+              <a class="text-decoration-none" href="#">Backender 101</a>
+            </div>
           </div>
-        </div>
 
-        <div
-          class="row flex-column flex-md-row align-content-center align-content-md-start"
-        >
           <div
-            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+            class="row flex-column flex-md-row align-content-center align-content-md-start"
           >
-            <img
-              class="img-fluid mb-3 mb-md-0"
-              src="/assets/images/101.png"
-              alt="backend 101"
-            />
-          </div>
-          <div class="col-12 col-md-10">
-            <div class="row">
-              <div class="col mb-3">
-                Argomenti trattati: IDE IntelliJ, Java & Spring Boot, REST Api,
-                POSTMAN, MySQL & CRUD, Exception base, logica services,
-                interfacce, polimorfismo, ereditarietà, AFU, ATE, E-R Diagram,
-                stime, JUnit Test, frontend base con Angular (integrazione
-                BE/FE).
+            <div
+              class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+            >
+              <img
+                class="img-fluid mb-3 mb-md-0"
+                src="/assets/images/101.png"
+                alt="backend 101"
+              />
+            </div>
+            <div class="col-12 col-md-10">
+              <div class="row">
+                <div class="col mb-3">
+                  Argomenti trattati: IDE IntelliJ, Java & Spring Boot, REST
+                  Api, POSTMAN, MySQL & CRUD, Exception base, logica services,
+                  interfacce, polimorfismo, ereditarietà, AFU, ATE, E-R Diagram,
+                  stime, JUnit Test, frontend base con Angular (integrazione
+                  BE/FE).
+                </div>
+              </div>
+              <div class="col d-flex">
+                <ul class="list-unstyled">
+                  <li>
+                    <span>Teacher:</span>
+                    <a class="text-decoration-none text-info-emphasis" href="#"
+                      >Alessandro Le Mura</a
+                    >
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary bi bi-trash remove ms-auto"
+                  id="remove"
+                  type="button"
+                ></button>
               </div>
             </div>
-            <div class="row">
-              <ul class="list-unstyled">
-                <li>
-                  <span>Teacher:</span>
-                  <a class="text-decoration-none text-info-emphasis" href="#"
-                    >Alessandro Le Mura</a
-                  >
-                </li>
-              </ul>
+          </div>
+        </div>
+
+        <div class="container mb-3 p-3 border border-1 rounded-3 card">
+          <div class="row">
+            <div class="col mb-3">
+              <a class="text-decoration-none" href="#">Git 101</a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="container mb-3 p-3 border border-1 rounded-3">
-        <div class="row">
-          <div class="col mb-3">
-            <a class="text-decoration-none" href="#">Git 101</a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div
-            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
-          >
-            <img
-              class="img-fluid mb-3 mb-md-0"
-              src="/assets/images/git.png"
-              alt="backend 101"
-            />
-          </div>
-          <div class="col-10">
-            <div class="row">
-              <div class="col mb-3">
-                Questo corso si occupa di spiegare i concetti base di Git e
-                della condivisione di un progetto software in un team.
+          <div class="row">
+            <div
+              class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+            >
+              <img
+                class="img-fluid mb-3 mb-md-0"
+                src="/assets/images/git.png"
+                alt="backend 101"
+              />
+            </div>
+            <div class="col-12 col-md-10">
+              <div class="row">
+                <div class="col mb-3">
+                  Questo corso si occupa di spiegare i concetti base di Git e
+                  della condivisione di un progetto software in un team.
+                </div>
+              </div>
+              <div class="col d-flex">
+                <ul class="list-unstyled">
+                  <li>
+                    <span>Teacher:</span>
+                    <a class="text-decoration-none text-info-emphasis" href="#"
+                      >Gabriele Grillo</a
+                    >
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary bi bi-trash remove ms-auto"
+                  type="button"
+                ></button>
               </div>
             </div>
-            <div class="row">
-              <ul class="list-unstyled">
-                <li>
-                  <span>Teacher:</span>
-                  <a class="text-decoration-none text-info-emphasis" href="#"
-                    >Gabriele Grillo</a
-                  >
-                </li>
-              </ul>
+          </div>
+        </div>
+
+        <div class="container mb-3 p-3 border border-1 rounded-3 card">
+          <div class="row">
+            <div class="col mb-3">
+              <a class="text-decoration-none" href="#">Onboarding di base</a>
             </div>
           </div>
-        </div>
-      </div>
-
-      <div class="container mb-3 p-3 border border-1 rounded-3">
-        <div class="row">
-          <div class="col mb-3">
-            <a class="text-decoration-none" href="#">Onboarding di base</a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div
-            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
-          >
-            <img
-              class="img-fluid mb-3 mb-md-0"
-              src="/assets/images/onboardin.png"
-              alt="backend 101"
-            />
-          </div>
-          <div class="col-10">
-            <div class="row">
-              <div class="col mb-3"></div>
+          <div class="row">
+            <div
+              class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+            >
+              <img
+                class="img-fluid mb-3 mb-md-0"
+                src="/assets/images/onboardin.png"
+                alt="backend 101"
+              />
             </div>
-            <div class="row">
-              <ul class="list-unstyled">
-                <li>
-                  <span>Teacher:</span>
-                  <a class="text-decoration-none text-info-emphasis" href="#"
-                    >Carla Naselli</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container mb-3 p-3 border border-1 rounded-3">
-        <div class="row">
-          <div class="col mb-3">
-            <a class="text-decoration-none" href="#">ReactJS 101</a>
-          </div>
-        </div>
-
-        <div class="row">
-          <div
-            class="col-12 col-md-2 d-flex align-items-center justify-content-center"
-          >
-            <img
-              class="img-fluid mb-3 mb-md-0"
-              src="/assets/images/react.png"
-              alt="backend 101"
-            />
-          </div>
-          <div class="col-10">
-            <div class="row">
-              <div class="col mb-3">
-                In questo corso imparerai le basi per poter usare React JS con
-                TypeScript ed Hooks
+            <div class="col-12 col-md-10">
+              <div class="row">
+                <div class="col mb-3">Questo corso si occupa di spiegare i concetti base di Git e della condivisione di un progetto software in un team. </div>
+              </div>
+              <div class="col d-flex">
+                <ul class="list-unstyled">
+                  <li>
+                    <span>Teacher:</span>
+                    <a class="text-decoration-none text-info-emphasis" href="#"
+                      >Carla Naselli</a
+                    >
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary bi bi-trash remove ms-auto"
+                  type="button"
+                ></button>
               </div>
             </div>
-            <div class="row">
-              <ul class="list-unstyled">
-                <li>
-                  <span>Teacher:</span>
-                  <a class="text-decoration-none text-info-emphasis" href="#"
-                    >Orazio Contarino</a
-                  >
-                </li>
-              </ul>
+          </div>
+        </div>
+
+        <div class="container mb-3 p-3 border border-1 rounded-3 card">
+          <div class="row">
+            <div class="col mb-3">
+              <a class="text-decoration-none" href="#">ReactJS 101</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div
+              class="col-12 col-md-2 d-flex align-items-center justify-content-center"
+            >
+              <img
+                class="img-fluid mb-3 mb-md-0"
+                src="/assets/images/react.png"
+                alt="backend 101"
+              />
+            </div>
+            <div class="col-12 col-md-10">
+              <div class="row">
+                <div class="col mb-3">
+                  In questo corso imparerai le basi per poter usare React JS con
+                  TypeScript ed Hooks
+                </div>
+              </div>
+              <div class="col d-flex">
+                <ul class="list-unstyled">
+                  <li>
+                    <span>Teacher:</span>
+                    <a class="text-decoration-none text-info-emphasis" href="#"
+                      >Orazio Contarino</a
+                    >
+                  </li>
+                </ul>
+                <button
+                  class="btn btn-primary bi bi-trash remove ms-auto"
+                  type="button"
+                ></button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </main>
-
-    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script> -->
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
     <script src="https://unpkg.com/@popperjs/core@2"></script>
-    <script>
-      const button = document.querySelector("#popoverNotification");
-      const tooltip = document.querySelector("#tooltip");
-
-      const popperInstance = Popper.createPopper(button, tooltip, {
-        modifiers: [
-          {
-            name: "offset",
-            options: {
-              offset: [0, 8],
-            },
-          },
-        ],
-      });
-
-      function show() {
-        tooltip.toggleAttribute("data-show");
-
-        // Update its position
-        popperInstance.update();
-      }
-
-      button.addEventListener("click", show);
-    </script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./js/popover.js"></script>
+    <script src="./js/addButton.js"></script>
   </body>
 </html>

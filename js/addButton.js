@@ -71,37 +71,83 @@ function submitModal() {
   cardText.text(inputMessage.val());
   cardTeacher.text(inputTeacher.val());
 
-  cardDelete.on("click", (e) => {
-    deleteArticle(e.currentTarget.offsetParent); //eventListener to delete new card
-  });
+cardDelete.on("click", (e) => {
+  deleteArticle(e.currentTarget.offsetParent); //eventListener to delete new card
+});
   closeModal();
 }
 
-{
-  async function loadJson(url) {
-    let response = await fetch(url);
+// function submitModal() {
+//   articles.prepend(
+//     $("<div>")
+//       .addClass("container mb-3 p-3 border border-1 rounded-3 card")
+//       .prepend(
+//         $("<div>")
+//           .addClass("row")
+//           .prepend(
+//             $("<div>")
+//               .addClass("col mb-3")
+//               .prepend(
+//                 $("<a>")
+//                   .addClass("text-decoration-none card__header")
+//                   .attr("href", "#")
+//                   .text(`${inputHeader.val()}`)
+//               )
+//           ),
+//         $("<div>")
+//           .addClass(
+//             "row flex-column flex-md-row align-content-center align-content-md-start"
+//           )
+//           .prepend(
+//             $("<div>")
+//               .addClass(
+//                 "col-12 col-md-2 d-flex align-items-center justify-content-center"
+//               )
+//               .prepend(
+//                 $("<img>")
+//                   .addClass("img-fluid mb-3 mb-md-0 card__image")
+//                   .attr("src", `${inputImage.val()}`)
+//               ),
+//             $("<div>")
+//               .addClass("col-12 col-md-10")
+//               .prepend(
+//                 $("<div>")
+//                   .addClass("row")
+//                   .prepend(
+//                     $("<div>")
+//                       .addClass("col mb-3 card__text")
+//                       .text(inputMessage.val())
+//                   ),
+//                 $("<div>")
+//                   .addClass("col d-flex")
+//                   .prepend(
+//                     $("<ul>")
+//                       .addClass("list-unstyled")
+//                       .prepend(
+//                         $("<li>").prepend(
+//                           $("<span>").text("Teacher: "),
+//                           $("<a>")
+//                             .addClass(
+//                               "text-decoration-none text-info-emphasis card__teacher-link"
+//                             )
+//                             .attr("href", "#")
+//                             .text(inputTeacher.val())
+//                         )
+//                       ),
+//                     $("<button>")
+//                       .addClass("btn btn-primary bi bi-trash remove ms-auto")
+//                       .attr("id", "remove")
+//                       .on("click", (e) => {
+//                         deleteArticle(e.currentTarget.offsetParent); //eventListener to delete new card
+//                       })
+//                   )
+//               )
+//           )
+//       )
+//   );
 
-    if (response.status === 200) {
-      let json = await response.json();
-      console.log(json);
-      return json;
-    }
-    throw new ThrowUrlError();
-  }
-
-  loadJson("https://parallelum.com.br/fipe/api/v1/carros/marcas") // (3)
-    .catch(console.log()); // Bad URL - 404
-}
-
-{
-  function delay() {
-    console.log("aspetto 5 secondi");
-    setTimeout(() => {
-      console.log("sono passati 5 secondi");
-    }, 5000);
-  }
-  delay();
-}
+//   closeModal();
+// }
 
 // function submitModal() {
 //   articles.prepend(`
@@ -146,8 +192,6 @@ function submitModal() {
 //   closeModal();
 //   addEvent();
 // }
-
-
 
 // {
 //   $.ajax({
@@ -204,5 +248,43 @@ function submitModal() {
 //   }).fail((error) => {
 //     console.log(error);
 //   });
+
+// {
+//   async function loadJson(url) {
+//     let response = await fetch(url);
+
+//     if (response.status === 200) {
+//       let json = await response.json();
+//       console.log(json);
+//       return json;
+//     }
+//     throw new ThrowUrlError("BAD URL - 404");
+//   }
+
+//   loadJson("https://parallelum.com.br/fipe/api/v1/carros/marcas") // (3)
+//     .catch(console.log()); // Bad URL - 404
+// }
+
+// {
+//   console.log("aspetto 5 secondi");
+//   async function delay() {
+//     let promise = new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve("sono passati 5 secondi");
+//       }, 5000);
+//     });
+//     console.log(await promise);
+//   }
+//   console.log(delay())
+// }
+
+// {
+//   console.log(
+//     "aspetto 5 secondi",
+//     setTimeout(() => {
+//       console.log("sono passati 5 secondi");
+//     }, 5000)
+//   );
+// }
 
 // }
